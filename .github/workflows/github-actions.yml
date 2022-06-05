@@ -1,14 +1,14 @@
 name: Devops pipeline
-on: [push] #wa9teh bech yexiti el workflow eli metkawen men jobs (qui peuvent etre dependant ou independant)
+on: [push]
 jobs:
-  Test: # 1 seul job metkawen men steps
+  Test:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository code #ism step
-        uses: actions/checkout@v3 # nestaamel action reusible (mawjouda)
+      - name: Check out repository code
+        uses: actions/checkout@v3
       - uses : actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version:
       - run : npm install
       - run : npm test
 
