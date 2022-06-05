@@ -51,8 +51,13 @@ exports.addUser = async (req, res) => {
 exports.deleteUser = async (req, res) => {
     let ident = req.params.ident;
     try {
-        let user = await User.deleteOne({ident :ident });
-        res.status(200).send("User successfully deleted !");
+        let user = await User.deleteOne({identifier :ident });
+        if(user){
+            res.status(200).send("User successfully deleted !");
+        }else {
+            res.status(500).send("User doesn't exist!");
+        }
+
     } catch (error) {
         res.status(500).send({"error message": error});
     }
