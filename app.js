@@ -41,7 +41,7 @@ app.use(function(err, req, res, next) {
 
 const PORT = process.env.PORT || 8080;
 
-mongoose.connect('mongodb+srv://admin:admin@cluster0.fszg5.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect(process.env.CONNECTION, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => app.listen(PORT, console.log(`Sever running on port ${PORT}`)))
