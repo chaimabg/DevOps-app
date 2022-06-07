@@ -1,13 +1,27 @@
-name: Devops pipeline
-on: [push]
-env:
-  AWS_REGION: eu-west-1
-  ECS_SERVICE: backend-app                # set this to your Amazon ECS service name
-  ECS_CLUSTER: chaima                # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: .aws/task-definition.json # set this to the path to your Amazon ECS task definition
-  CONTAINER_NAME: pipeline-app
+# DevOps
+Creating a CI/CD pipeline for a web application that helps to manage users.
 
-jobs:
+## Technologies :
+
+<img align="left" width="200" height="100" src="./images/aws.png">
+
+<img align="left" width="100" height="100" src="./images/docker.png">
+
+<img width="200" height="100" src="./images/node.png">
+<img width="200" height="100" src="./images/Expressjs.png">
+<img width="200" height="100" src="./images/mongo.png">
+
+
+
+## CI/CD Pipeline:
+
+- Implementing Backend application for user management with NodeJs/Express
+- Applying Test with Jest
+- Building docker image and Pushing it to dockerHub
+- Deploying the application in AWS ECS
+
+## GitHub Action Jobs :
+```
   Test:
     runs-on: ubuntu-latest
     steps:
@@ -18,6 +32,8 @@ jobs:
           node-version:
       - run : npm install
       - run : npm test
+  ```
+```
   Build:
     runs-on : ubuntu-latest
     needs:
@@ -39,6 +55,8 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/backend-app:${{ github.sha }}
+ ```
+```
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
@@ -72,5 +90,10 @@ jobs:
           service: ${{ env.ECS_SERVICE }}
           cluster: ${{ env.ECS_CLUSTER }}
           wait-for-service-stability: true
+```
+
+## Result
+
+![alt img](./images/pipeline.png)
 
 
