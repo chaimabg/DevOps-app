@@ -11,7 +11,7 @@ Creating a CI/CD pipeline for an application that helps to manage users.
 
 <img align="left" width="200" height="100" src="./images/Expressjs.png">
 
-<img align="left" width="200" height="100" src="./images/mongo.png">
+<img  width="200" height="100" src="./images/mongo.png">
 
 
 ## CI/CD Pipeline:
