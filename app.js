@@ -11,6 +11,7 @@ var mongoose = require('mongoose');
 
 var app = express();
 app.use(cors());
+dotenv.config();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -39,7 +40,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT ;
 
 mongoose.connect(process.env.CONNECTION, {
   useNewUrlParser: true,
