@@ -1,23 +1,24 @@
 # DevOps
-Creating a CI/CD pipeline for a web application that helps to manage users.
+Creating a CI/CD pipeline for an application that helps to manage users.
 
 ## Technologies :
 
-<img align="left" width="200" height="100" src="./images/aws.png">
+<img align="left" width="200" height="100"  src="./images/aws.png">
 
 <img align="left" width="100" height="100" src="./images/docker.png">
 
-<img width="200" height="100" src="./images/node.png">
-<img width="200" height="100" src="./images/Expressjs.png">
-<img width="200" height="100" src="./images/mongo.png">
+<img align="left" width="200" height="100" src="./images/node.png">
 
+<img align="left" width="200" height="100" src="./images/Expressjs.png">
+
+<img align="left" width="200" height="100" src="./images/mongo.png">
 
 
 ## CI/CD Pipeline:
 
 - Implementing Backend application for user management with NodeJs/Express
-- Applying Test with Jest
-- Building docker image and Pushing it to dockerHub
+- Applying unit & integration tests with Jest
+- Building docker image and pushing it to DockerHub
 - Deploying the application in AWS ECS
 
 ## GitHub Action Jobs :
@@ -95,5 +96,6 @@ Creating a CI/CD pipeline for a web application that helps to manage users.
 ## Result
 
 ![alt img](./images/pipeline.png)
+![alt img](./images/dockerhub.png)
 
 
